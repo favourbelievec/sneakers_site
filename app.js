@@ -9,11 +9,11 @@ const products = [
         colors: [
             {
                 code: "black",
-                img: "./img/air.png",
+                img: "./imgs/air.png",
             },
             {
                 code: "darkblue",
-                img: "./img/air2.png",
+                img: "./imgs/air2.png",
             },
         ],
     },
@@ -24,11 +24,11 @@ const products = [
         colors: [
             {
                 code: "black",
-                img: "./img/jordan.png",
+                img: "./imgs/jordan.png",
             },
             {
                 code: "skyblue",
-                img: "./img/jordan2.png",
+                img: "./imgs/jordan2.png",
             },
         ],
     },
@@ -38,12 +38,12 @@ const products = [
         price: 100,
         colors: [
             {
-               code: "black",
-               img: "./img/blazer.png", 
+               code: "grey",
+               img: "./imgs/blazer.png", 
             },
             {
                 code: "lightblue",
-                img: "./img/blazer2.png",
+                img: "./imgs/blazer2.png",
             },
         ],
     },
@@ -53,12 +53,12 @@ const products = [
         price: 110,
         colors: [
             {
-                code: "black",
-                img: "./img/crater.png",
+                code: "gray",
+                img: "./imgs/crater.png",
             },
             {
-                code: "gray",
-                img: "./img/crater2.png",
+                code: "black",
+                img: "./imgs/crater2.png",
             },
         ],
     },
@@ -68,12 +68,12 @@ const products = [
         price: 82,
         colors: [
             {
-                code: "black",
-                img: "./img/hippie.png",
+                code: "gray",
+                img: "./imgs/hippie.png",
             },
             {
-                code: "white",
-                img: "./img/hippie2.png",
+                code: "black",
+                img: "./imgs/hippie2.png",
             },
         ],
     },
@@ -86,8 +86,8 @@ const currentProductPrice = document.querySelector(".productPrice");
 const currentProductColors = document.querySelectorAll(".color");
 const currentProductSizes = document.querySelectorAll(".size");
 
-menuItems.forEach((item,index)=>{
-    item.addEventListener("click", ()=>{
+menuItems.forEach((item, index) => {
+    item.addEventListener("click", () => {
         //change the current slide
     wrapper.style.transform = `translateX(${-100 * index}vw)`;
 
@@ -99,5 +99,40 @@ menuItems.forEach((item,index)=>{
     currentProductPrice.textContent = "$" + choosenProduct.price;
     currentProductImg.src = choosenProduct.colors[0].img;
     
+    //assign new colors
+    currentProductColors.forEach((color, index) => {
+        color.style.backgroundColor = choosenProduct.colors[index].code;
+    });
  });
+});
+
+
+currentProductColors.forEach((color,index)=>{
+    color.addEventListener("click", ()=>{
+        currentProductImg.src = choosenProduct.colors[index].img
+    });
+});
+
+currentProductSizes.forEach((size, index) =>{
+    size.addEventListener("click",() =>{
+        currentProductSizes.forEach(size =>{
+            size.style.backgroundColor= "white"
+        size.style.color= "black"
+        })
+        size.style.backgroundColor= "black"
+        size.style.color= "white"
+    });
+});
+
+
+const productButton = document.querySelector(".productButton");
+const payment = document.querySelector(".payment");
+const close = document.querySelector(".close");
+
+productButton.addEventListener("click", ()=>{
+    payment.style.display="flex"
+});
+
+close.addEventListener("click", ()=>{
+    payment.style.display="none"
 });

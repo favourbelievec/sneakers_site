@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 body{
     font-family: 'Roboto', sans-serif;
     padding: 0;
@@ -100,12 +103,13 @@ nav{
 
 .sliderPrice{
     position: absolute;
-    top: 30%;
+    top: 15%;
     left: 20%;
     font-size: 50px;
     font-weight: 500;
     text-align: center;
     border: 1px solid gray;
+    color: white;
     z-index: 1;
 
 }
@@ -149,23 +153,23 @@ nav{
 }
 
 .sliderItem:nth-child(1) .sliderPrice{
-    color: limegreen;
+    color: whitesmoke;
 }
 
 .sliderItem:nth-child(2) .sliderPrice{
-    color: rgb(189, 76, 218);
+    color: whitesmoke;
 }
 
 .sliderItem:nth-child(3) .sliderPrice{
-    color: teal;
+    color: whitesmoke;
 }
 
 .sliderItem:nth-child(4) .sliderPrice{
-    color: cornflowerblue;
+    color: whitesmoke;
 }
 
 .sliderItem:nth-child(5) .sliderPrice{
-    color: rgb(152, 161, 24);
+    color: whitesmoke;
 }
 
 
@@ -193,7 +197,7 @@ text-align: center;
     font-weight: 600;
     margin: 20px;
 }
-.featuredDesc{
+.featureDesc{
     color: gray;
     width: 100px;
     height: 50px;
@@ -204,6 +208,92 @@ text-align: center;
     background-color: whitesmoke;
     position: relative;
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.payment{
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px 50px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0px 0px 84px 15px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 0px 84px 15px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 84px 15px rgba(0,0,0,0.75);
+}
+
+.payTitle{
+    font-size: 20px;
+    color: lightgray;
+}
+
+label{
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.payInput{
+    padding: 10px;
+    margin: 10px 0px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+
+.payInput::placeholder{
+    color: rgb(163, 163, 163);
+}
+
+.cardIcons{
+    display: flex;
+}
+
+.cardIcon{
+    margin-right: 10px;
+}
+
+.cardInfo{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sm{
+    width: 30%;
+}
+
+.payButton{
+    position: absolute;
+    height: 40px;
+    bottom: -40;
+    width: 100%;
+    left: 0;
+    box-shadow: 0px 0px 84px 15px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 84px 15px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 84px 15px rgba(0,0,0,0.75);
+    background-color: #369e62;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.close{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: gray;
+    color: white;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 2px;
 }
 
 .productImg{
