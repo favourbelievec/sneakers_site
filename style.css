@@ -357,12 +357,3 @@ label{
     background-color: white;
     color: black;
 }
-body {
-    background-color: pink;
-  }
-  
-  @media screen and (min-width: 480px) {
-    body {
-      background-color: lightgreen;
-    }
-  }
